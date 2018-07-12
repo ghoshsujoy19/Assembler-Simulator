@@ -1,0 +1,5 @@
+var c = 5
+var d = 6
+var a[5]
+a[1] = 1
+a[3] = c

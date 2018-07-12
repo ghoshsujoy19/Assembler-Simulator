@@ -1,0 +1,5 @@
+var x = 0
+JUMP stat
+x = x * 20
+stat:
+var x = 10

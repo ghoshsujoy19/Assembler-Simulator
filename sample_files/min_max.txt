@@ -1,0 +1,10 @@
+var a = 1
+var b = 2
+var low = 0
+var high = 0
+low = min(a,b,3)
+a = a + 1
+b = b * 2
+high = max(a,b,3)
+var low2 = 0
+low2 = min(11, -15)

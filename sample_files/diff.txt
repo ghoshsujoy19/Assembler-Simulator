@@ -1,0 +1,10 @@
+var a = 5
+var b = 10
+var x1 = 0
+x1 = 12 - 15
+var x2 = 0
+x2 = b - 2
+var x3 = 0
+x3 = 10- a
+var x4 = 0
+x4 = b - a

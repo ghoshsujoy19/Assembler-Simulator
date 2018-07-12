@@ -1,0 +1,380 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assembler Linker Loader Simulator</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='shortcut icon' href='static/icon.ico' type='image/x-icon'/ >
+    <link type="text/css" rel="stylesheet" href="static/css/icon.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="static/css/materialize.css" media="screen,projection"/> -->
+    <link type="text/css" rel="stylesheet" href="static/css/main.css" media="screen,projection"/>
+    <link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="static/favicon.ico">
+
+    <link rel="stylesheet" href="static/assets/css/normalize.css">
+    <link rel="stylesheet" href="static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="static/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="static/assets/css/flag-icon.min.css">
+    <link rel="stylesheet" href="static/assets/css/cs-skin-elastic.css">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" href="static/assets/scss/style.css">
+    <link href="static/assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+<body>
+
+
+        <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="ext navbar-brand" plink="titleBox">Simulator</a>
+                <a class="navbar-brand hidden" plink="titleBox">S</a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="ext navbar-brand" plink="input-files" style="cursor: pointer;"> <i class="menu-icon fa fa-folder"></i>Files </a>
+                    </li>
+                    <h3 class="menu-title">Pass</h3><!-- /.menu-title -->
+                    <li>
+                        <a plink="pass1" class="ext dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;"> <i class="menu-icon fa fa-check"></i>Pass 1</a>
+                    </li>
+                    <li >
+                        <a plink="pass2" class="ext dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;"> <i class="menu-icon fa fa-check-circle"></i>Pass 2</a>
+                    </li>
+
+                    <h3 class="menu-title">Linker</h3><!-- /.menu-title -->
+                    <li>
+                        <a plink="linker" class="ext dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;"> <i class="menu-icon fa fa-check"></i>Linker</a>
+                    </li>
+                    <h3 class="menu-title">Simulation</h3><!-- /.menu-title -->
+
+                    <li>
+                        <a plink="simulator" class="ext dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="cursor: pointer;"> <i class="menu-icon fa fa-tasks"></i>Simulator</a>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                </div>
+
+            </div>
+        </header>
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+            <div class="container" style="min-height: 87vh">
+                <div style="padding-top: 2%">
+                    <div class = "row" id="titleBox">
+                      <div class="col s8 offset-s2">
+                        <div class="card-panel brown darken-3 hoverable"  style="margin:0px auto;">             
+                          <span class="white-text" style="text-align: center;font-size:40px;">
+                            <center>Assembler Linker Loader</center>
+                          </span>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class=" white-text" style="text-align: center;">
+                            <br>
+                            Mitansh Jain : 160101042
+                            <br>
+                            Sujoy Ghosh : 160101073
+                            <br>
+                            Akul Agrawal : 160101085
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <div class="col-lg-12" id="input-files">
+                    <div class="card">
+                      <div class="card-header">
+                        <strong>Input Files</strong>
+                      </div>
+                      <div class="card-body card-block">
+                        <form id="input-form" method="post" class="form-horizontal">
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-multiple-input" class=" form-control-label">Select File Input</label></div>
+                            <div class="col-12 col-md-9">
+                            <input type="file" id="file-multiple-input" name="file-multiple-input" multiple class="form-control-file">
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm" id="submit-button" name="submit">
+                          <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                      </div>
+                    </div>
+                    <!-- <div id='file-data'></div> -->
+                    <div class="card">
+                                <div class="card-header">
+                                    <h4>Input Files</h4>
+                                </div>
+                                <div class="card-body" id='file-data'>
+                                </div>
+                            </div>
+                    </div>
+
+
+                <div id="pass1">
+                <div class="card">
+                        <div class="card-header">
+                            <h4>Input Files</h4>
+                        </div>
+                        <div class="card-body" id='pass1final'>
+                        </div>
+                    </div>
+                </div>
+                    
+
+                <div id="pass2">
+                <div class="card">
+                        <div class="card-header">
+                            <h4>Input Files</h4>
+                        </div>
+                        <div class="card-body" id='pass2final'>
+                        </div>
+                    </div>
+                    </div>
+
+                    
+                <center>
+                <div id="linker" class="extr">
+                <div class="col-lg-6">
+                <div class="card" style="margin: 0 auto;float: none;">
+                        <div class="card-header">
+                            <h4>Linker</h4>
+                        </div>
+                        <div class="card-body" id='linkerfinal'>
+                        </div>
+                    </div>
+                    </div>
+                    </div></center>
+                <div class = "col-lg-12" id="simulator">
+                    <div class="card">
+                      <div class="card-header">
+                        <strong>Simulation</strong>
+                      </div>
+                      <div class="card-body card-block">
+                        <form method="post" class="form-horizontal">
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="hf-email" class=" form-control-label">Offset</label></div>
+                            <div class="col-12 col-md-9"><input type="test" id="offset" name="hf-email" placeholder="Enter Offset..." class="form-control"></div>
+                          </div>
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="hf-password" class=" form-control-label">Speed(instr/sec)</label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="speed" name="hf-password" placeholder="Enter Speed..." class="form-control"></div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="card-footer">
+                        <button class="btn btn-primary btn-sm" id="runButton">
+                          <i class="fa fa-play-circle"></i> Play
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-header">
+                        <strong>Current Instruction : </strong><i id='currentInst'></i>
+                      </div>
+                      </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Simulator Output</strong>
+                        </div>
+                        <div class="card-body" id='sim'>
+                        <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Memory Locations</strong>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table">
+                                      <!-- <thead>
+                                      <tr>
+                                      <th>
+                                        
+                                      </th>
+                                      </tr>
+                                      </thead> -->
+                                      <tbody id="memlocs">
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Registers</strong>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table">
+                                      <!-- <thead>
+                                      <tr>
+                                      <th>
+                                        
+                                      </th>
+                                      </tr>
+                                      </thead> -->
+                                      <tbody id="registers">
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-lg-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <strong class="card-title">Variable Location</strong>
+                                </div>
+                                <div class="card-body">
+                                    <table class="table">
+                                      <!-- <thead>
+                                      <tr>
+                                      <th>
+                                        
+                                      </th>
+                                      </tr>
+                                      </thead> -->
+                                      <tbody id="varlocs">
+                                      </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+                </div> 
+                <!-- <div id="simulator">
+                    <div class="row">
+                      <div class="col s3" style="text-align: center">                   
+                          <div class="input-field col s6">
+                            <input placeholder="Offset" id="offset" type="text" class="validate">
+                            <input placeholder="Speed" id="speed" type="text" class="validate">
+                          </div>
+                          <span class="black-text">
+                            <a class="waves-effect brown lighten-3 black-text waves-light btn-large btn-floating" id="loadButton"><i class="material-icons">fast_forward</i></a>
+                        </span>
+                      </div>
+                      <div class="col s6 ">
+                        <div class="card-panel brown lighten-4 hoverable black-text"  style="margin:0px auto;">
+                            
+                          <span class="black-text" id="currentInst">
+                            Nothing Loaded yet
+                          </span>
+                        </div>
+                      </div>
+                      <div class="col s3" style="text-align: center">
+                            
+                          <span class="black-text">
+                            <a class="btn-large btn-floating waves-effect waves-light brown lighten-3 black-text" id="runButton"><i class="material-icons">play_arrow</i></a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s6" style="display:block">
+                        <div class="card-panel brown lighten-4 hoverable black-text col s12" style="margin:20px auto;padding:10px;">
+                          <span class="" id="registers">
+                            Registers   
+                          </span>
+                        </div>
+                        <div class="card-panel brown lighten-4 hoverable black-text col s12" style="margin:20px auto;padding:10px;">
+                            <span class="" id="varlocs">
+                            Variable Location
+                            </span>
+                        </div>
+                      </div>
+                      <div class="col s6 ">
+                      <br>
+                        <div class="card-panel brown lighten-4 hoverable black-text" style="margin:0px auto;padding:10px;">
+                            
+                          <span class="" id="memlocs">
+                            Memory Location
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                </div> -->
+            </div>
+            </div>
+        </div>
+    </div>
+                        
+
+            
+
+
+           
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/materialize.js"></script>
+    <script type="text/javascript" src="static/js/main.js"></script>
+    <script type="text/javascript" src="static/assets/js/vendor/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script type="text/javascript" src="static/assets/js/plugins.js"></script>
+    <script type="text/javascript" src="static/assets/js/main.js"></script>
+
+
+    <script type="text/javascript" src="static/assets/js/lib/chart-js/Chart.bundle.js"></script>
+    <script type="text/javascript" src="static/assets/js/dashboard.js"></script>
+    <script type="text/javascript" src="static/assets/js/widgets.js"></script>
+    <script type="text/javascript" src="static/assets/js/lib/vector-map/jquery.vmap.js"></script>
+    <script type="text/javascript" src="static/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
+    <script type="text/javascript" src="static/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
+    <script type="text/javascript" src="static/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+    <script>
+        ( function ( $ ) {
+            "use strict";
+
+            jQuery( '#vmap' ).vectorMap( {
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: [ '#1de9b6', '#03a9f5' ],
+                normalizeFunction: 'polynomial'
+            } );
+        } )( jQuery );
+    </script>
+
+</body>
+</html>

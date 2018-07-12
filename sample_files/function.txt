@@ -1,0 +1,9 @@
+var a = 0
+function func
+	a = a + 1
+endfunction
+loop 3
+	loop 3
+ 		func()
+	endloop
+endloop

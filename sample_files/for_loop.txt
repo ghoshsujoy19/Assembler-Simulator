@@ -1,0 +1,4 @@
+var a = 0
+loop 9
+	a = a - 2
+endloop

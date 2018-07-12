@@ -1,0 +1,6 @@
+var a = 1
+loop 2
+	loop 2
+		a = a + 3
+	endloop
+endloop
